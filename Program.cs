@@ -1,2 +1,39 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+string[] inputString;
+int allCountSmallStrings=0;
+Console.WriteLine("Please enter strings through whitespase!");
+inputString = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+Console.Write("[");
+for (int i = 0; i < inputString.Length; i++)
+{
+    if (inputString[i].Length < 4)
+    {
+        allCountSmallStrings++;
+    }
+    if (i < inputString.Length - 1)
+    {
+        Console.Write($"\"{inputString[i]}\",");
+    }
+    else Console.Write($"\"{inputString[i]}\"");
+}
+Console.Write("]");
+
+string[] arrRezStrings = new string[allCountSmallStrings];
+
+
+Console.Write(" -> [");
+for (int j=0,i = 0; i < inputString.Length; i++)
+{
+    if (inputString[i].Length < 4)
+    {
+        arrRezStrings[j] = inputString[i];
+        if (j < arrRezStrings.Length-1)
+            {
+            Console.Write($"\"{arrRezStrings[j]}\",");
+            j++;
+            }
+        else Console.Write($"\"{arrRezStrings[j]}\"");
+    }
+}
+Console.Write("]");
+
