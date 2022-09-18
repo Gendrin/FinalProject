@@ -37,3 +37,17 @@ for (int j=0,i = 0; i < inputString.Length; i++)
 }
 Console.Write("]");
 
+void PrintString(string[] printStrings)
+{
+    Console.Write("[");
+    for (int i = 0; i < printStrings.Length; i++)
+    {
+        if (i < printStrings.Length - 1)
+        {
+            Console.Write($"\"{printStrings[i]}\",");
+        }
+        else Console.Write($"\"{printStrings[i]}\"");
+    }
+    Console.Write("]");
+}
+
