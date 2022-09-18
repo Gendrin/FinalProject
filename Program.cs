@@ -51,3 +51,14 @@ void PrintString(string[] printStrings)
     Console.Write("]");
 }
 
+int CheckCountForSimbols(string[] checkString, int longString)
+{
+    for (int i = 0; i < checkString.Length; i++)
+    {
+        if (checkString[i].Length < longString)
+        {
+            allCountSmallStrings++;
+        }
+    }
+    return allCountSmallStrings;
+}
