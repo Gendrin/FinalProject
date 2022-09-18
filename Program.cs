@@ -51,7 +51,7 @@ void PrintString(string[] printStrings)
     Console.Write("]");
 }
 
-int CheckCountForSimbols(string[] checkString, int longString)
+string[] CheckCountForSimbols(string[] checkString, int longString)
 {
     for (int i = 0; i < checkString.Length; i++)
     {
@@ -60,5 +60,15 @@ int CheckCountForSimbols(string[] checkString, int longString)
             allCountSmallStrings++;
         }
     }
-    return allCountSmallStrings;
+    string[] arrRezStrings = new string[allCountSmallStrings];
+    int j = 0;
+    for (int i=0;i < checkString.Length; i++)
+    {
+        if (checkString[i].Length < longString)
+        {
+            arrRezStrings[j]= checkString[i];
+            j++;
+        }
+    }
+    return arrRezStrings;
 }
